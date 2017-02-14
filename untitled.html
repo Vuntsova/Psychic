@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+
+	<h1> Psychic Game</h1>
+	<h3> Guess what letter I am thinking of:</h3>
+	<h3> You Win:<span id="win">0</span></h3>
+	<h3> You Lose:<span id="lose">0</span></h3>
+	<h3> Guesses Left:<span id="left">9</span></h3>
+	<h3> Guesses So Far:<span id="soFar"></span></h3>
+
+<script type="text/javascript">
+	//creating var for all elements
+	var win = 0;
+	var lose = 0;
+	var left = 0;
+
+ 	document.onkeyup=function() {
+ 	
+ 	var userGuess = event.key;
+ 	var alpha = ["a", "b", "c", "d", "e", "f" ,"g" ,"h" ,"i" ,"j" ,"k" ,"l" ,"m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+ 	var randGuess = Math.floor(Math.random()*alpha.length);
+ 	var compGuess = alpha[randGuess];
+ 	var far = Math.floor(Math.random()*alpha.length);
+ 	var soFar= event.key;
+ 	var wrong = [];
+
+
+ 	if(userGuess === compGuess){
+ 		win++;
+ 		document.getElementById("win").textContent=win;
+ 	}
+ 	else{
+
+ 		lose++;
+ 		document.getElementById("lose").textContent=lose;
+ 
+ 		left--;
+ 
+ 		document.getElementById("left").textContent=left;
+ 		wrong.push(soFar);
+ 		document.getElementById("soFar").textContent=wrong;
+ 	}
+
+
+
+
+
+ 	//test
+ 	console.log(alpha);
+ 	console.log(randGuess);
+ 	console.log(compGuess);
+ 	console.log("win");
+ 	console.log("lose");
+ 	console.log("left");
+ 	}
+</script>	
+</script>	
+</body>
+</html>
